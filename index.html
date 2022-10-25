@@ -24,25 +24,37 @@
                     <option value="Vodka" class="selection__item">Vodka</option>
                     <option value="Whiskey" class="selection__item">Whiskey</option>
                     <option value="Tequila" class="selection__item">Tequila</option>
+                    <option value="Rum" class="selection__item">Rum</option>
                 </select>
             </div>
+            <input type="submit" class="selection__btn">Generate cocktail</input>
         </form>
-        <button type="submit" class="selection__btn">Generate cocktail</button>
+        
     </section>
 
     <section class="result__container">
         <div class="result__item">
-            <p class="result__title">Here you go!</p>
-            <h2 class="result__subtitle">Name of cocktail</h2>
-            <img src="" alt="" class="result__img">
+            <p class="result__message">Here you go!</p>
+            <h2 class="result__title">Name of cocktail</h2>
+            <img class="result__img" src="" alt="" >
         </div>
     </section>
 
     <section class="recipe__container">
         <article class="result__item">
             <h2 class="recipe__title">Recipe:</h2>
-            <ul class="recipe__ingredients"></ul>
-            <p class="recipe__instructions"></p>
+            <div>
+                <h4>Ingredients:</h4>
+                <ul class="recipe__ingredients"></ul>
+            </div>
+            <div>
+                <h4>Measurements:</h4>
+                <ul class="recipe__measurements"></ul>
+            </div>
+            <div>
+                <h4>Instructions:</h4>
+                <p class="recipe__instructions"></p>
+            </div>
         </article>
     </section>
 

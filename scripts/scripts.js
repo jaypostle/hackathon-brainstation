@@ -56,12 +56,12 @@ const renderCocktail = (cocktailObj) => {
     cocktailTitleEl.innerText = cocktailObj.title;
     cocktailImgEl.setAttribute('src', cocktailObj.src);
 
-    console.log(cocktailObj);
-    console.log('render cocktail was run');
+    // console.log(cocktailObj);
+    // console.log('render cocktail was run');
     // title
-    console.log(cocktailObj.title);
+    // console.log(cocktailObj.title);
     // id
-    console.log(cocktailObj.id);
+    // console.log(cocktailObj.id);
     // ingredients
     // instructions
 
@@ -74,14 +74,30 @@ const renderCocktail = (cocktailObj) => {
 formEl.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    cocktailObj = {};
+    clearObj();
+    clearDOM();
     
-    console.log(e.target.Alcohol.value);
+    // console.log(e.target.Alcohol.value);
     let ingredientFilter = e.target.Alcohol.value;
-    console.log(ingredientFilter);
+    // console.log(ingredientFilter);
     promiseCall(ingredientFilter);
   
 })
+
+function clearObj() {
+    // console.log('clearObj Ran');
+    cocktailObj.ingredients.splice(0, cocktailObj.ingredients.length);
+    cocktailObj.measurements.splice(0, cocktailObj.measurements.length);
+    // console.log(cocktailObj.ingredients, cocktailObj.measurements);
+}
+
+function clearDOM() {
+    const ingredientsUlEl = document.querySelector('.recipe__ingredients');
+    const measurementsUlEl = document.querySelector('.recipe__measurements');
+
+    ingredientsUlEl.innerText = '';
+    measurementsUlEl.innerText = '';
+}
 
 
 
@@ -100,9 +116,9 @@ formEl.addEventListener('submit', (e) => {
 
 const ingredientsPromiseCall = (drinkId) => {
     const ingredientsPromise = axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`);
-    console.log(ingredientsPromise);
+    // console.log(ingredientsPromise);
     ingredientsPromise.then((response) => {
-        // console.log(response.data.drinks[0].strInstructions);
+        console.log(response.data.drinks[0]);
     
         let cocktail = response.data.drinks[0];
         const ingredientsUlEl = document.querySelector('.recipe__ingredients');
@@ -112,18 +128,27 @@ const ingredientsPromiseCall = (drinkId) => {
     
         cocktailObj.instructions = cocktail.strInstructions;
     
-        // Ingredients
-        cocktailObj.ingredients.push(cocktail.strIngredient1);
-        cocktailObj.ingredients.push(cocktail.strIngredient2);
-        cocktailObj.ingredients.push(cocktail.strIngredient3);
-        cocktailObj.ingredients.push(cocktail.strIngredient4);
+
+        let filteredIngredients = Object.keys(cocktail).filter((name) => /strIngredient/.test(name));
+        // console.log(filteredNames);
+        for (const key in cocktail) {
+            if (filteredIngredients.includes(key) && cocktail[key] !== null) {
+                // console.log(cocktail[key]);
+                cocktailObj.ingredients.push(cocktail[key]);
+                
+            }
+        }
+
+        let filteredMeasurements = Object.keys(cocktail).filter((name) => /strMeasure/.test(name));
+        for (const key in cocktail) {
+            if (filteredMeasurements.includes(key) && cocktail[key] !== null) {
+                // console.log(cocktail[key]);
+                cocktailObj.measurements.push(cocktail[key]);
+                
+            }
+        }
     
-        // Measurements
-        cocktailObj.measurements.push(cocktail.strMeasure1);
-        cocktailObj.measurements.push(cocktail.strMeasure2);
-        cocktailObj.measurements.push(cocktail.strMeasure3);
-    
-        console.log(cocktailObj.ingredients, cocktailObj.measurements, cocktailObj.instructions);
+        // console.log(cocktailObj.ingredients, cocktailObj.measurements, cocktailObj.instructions);
     
     
     

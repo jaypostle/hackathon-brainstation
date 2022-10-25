@@ -4,9 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackathon - Pod 9</title>
+    <title>Cocktail App</title>
 </head>
 <body>
-    
+
+<header class="header">
+    <h1 class="header__title">Need a cocktail?</h1>
+    <p class="header__subtitle">Tell me what you have</p>
+</header>
+
+<section class="selection__container">
+    <form class="selection__form">
+        <div class="selection__dropdown">
+            <label for="Alcohol">Alcohol</label>
+            <select name="Alcohol" class="selection__title">
+                <option value="Gin" class="selection__item">Gin</option>
+                <option value="Vodka" class="selection__item">Vodka</option>
+                <option value="Whiskey" class="selection__item">Whiskey</option>
+                <option value="Tequila" class="selection__item">Tequila</option>
+            </select>
+        </div>
+    </form>
+    <button type="submit" class="selection__btn">Generate cocktail</button>
+</section>
+
+<section class="result__container">
+    <div class="result__item">
+        <p class="result__title">Here you go!</p>
+        <h2 class="result__subtitle">Name of cocktail</h2>
+        <img src="" alt="" class="result__img">
+    </div>
+</section>
+
+<section class="recipe__container">
+    <article class="result__item">
+        <h2 class="recipe__title">Recipe:</h2>
+        <ul class="recipe__ingredients"></ul>
+        <p class="recipe__instructions"></p>
+    </article>
+</section>
+
+<footer class="footer">
+<p>Created by Caty, Jayson, Lanre and Lakpa</p>
+</footer>
+
+
 </body>
 </html>

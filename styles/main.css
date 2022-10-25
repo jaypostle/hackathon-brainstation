@@ -1,0 +1,162 @@
+/*light*/
+@font-face {
+  font-family: "inter";
+  src: url("../assets/fonts/Inter-Light.ttf");
+  font-weight: 300;
+}
+/*regular*/
+@font-face {
+  font-family: "inter";
+  src: url("../assets/fonts/Inter-Regular.ttf");
+  font-weight: 400;
+}
+/*medium*/
+@font-face {
+  font-family: "inter";
+  src: url("../assets/fonts/Inter-Medium.ttf");
+  font: weight 500;
+}
+/*Bold*/
+@font-face {
+  font-family: "inter";
+  src: url("../assets/fonts/Inter-Bold.ttf");
+  font-weight: 700;
+}
+/*Primary color*/
+/*Secondary color*/
+/*Buttons*/
+/* media query for mobile */
+/* media query for tablet */
+/* media query for high pixel density devices */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "inter";
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/*mobile*/
+.header {
+  background-color: #373943;
+  text-align: center;
+  color: #fafafa;
+  padding: 1.5rem;
+}
+.header__title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+.header__subtitle {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.375rem;
+}
+
+.main-content {
+  background-color: #cdbaac;
+  color: rgb(26, 15, 25);
+  padding: 1.5rem;
+}
+
+.selection__container {
+  display: flex;
+  justify-content: center;
+}
+.selection__form {
+  background-color: #b59a85;
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+}
+.selection__title {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+.selection__btn {
+  background-color: #da8a44;
+  border: 1px solid #ffffff;
+  padding: 0.25rem;
+  line-height: 1.25rem;
+  width: 100%;
+  border-radius: 0.25rem;
+  font: size 10px;
+  font-weight: 700;
+}
+.selection__item {
+  text-align: center;
+  padding: 0.25rem;
+  background-color: #cdbaac;
+}
+
+.result__container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.result__message {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+.result__title {
+  color: rgb(26, 15, 25);
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+.result__img {
+  width: auto;
+  height: 50vh;
+}
+
+.recipe__container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.recipe__ingredients {
+  list-style: disc;
+}
+.recipe__ingredients-item {
+  text-align: left;
+}
+.recipe__measurements {
+  list-style: disc;
+}
+.recipe__measurements-item {
+  text-align: left;
+}
+.recipe__display {
+  display: flex;
+  justify-content: space-between;
+}
+.recipe__display-ingredients {
+  width: 45%;
+  background-color: #b59a85;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+.recipe__display-measurements {
+  width: 45%;
+  background-color: #b59a85;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+.recipe__instructions {
+  padding: 1rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}/*# sourceMappingURL=main.css.map */

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hackathon - Pod 9</title>
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
@@ -14,48 +15,51 @@
         <h1 class="header__title">Need a cocktail?</h1>
         <p class="header__subtitle">Tell me what you have</p>
     </header>
+    <section class="main-content">
+        <section class="selection__container">
+            <form class="selection__form">
+                <div class="selection__dropdown">
+                    <label class="selection__title" for="Alcohol">Alcohol</label>
+                    <select name="Alcohol">
+                        <option value="Gin" class="selection__item">Gin</option>
+                        <option value="Vodka" class="selection__item">Vodka</option>
+                        <option value="Whiskey" class="selection__item">Whiskey</option>
+                        <option value="Tequila" class="selection__item">Tequila</option>
+                        <option value="Rum" class="selection__item">Rum</option>
+                    </select>
+                </div>
+                <input type="submit" value="Generate cocktail" class="selection__btn"></input>
+            </form>
 
-    <section class="selection__container">
-        <form class="selection__form">
-            <div class="selection__dropdown">
-                <label for="Alcohol">Alcohol</label>
-                <select name="Alcohol" class="selection__title">
-                    <option value="Gin" class="selection__item">Gin</option>
-                    <option value="Vodka" class="selection__item">Vodka</option>
-                    <option value="Whiskey" class="selection__item">Whiskey</option>
-                    <option value="Tequila" class="selection__item">Tequila</option>
-                    <option value="Rum" class="selection__item">Rum</option>
-                </select>
-            </div>
-            <input type="submit" class="selection__btn">Generate cocktail</input>
-        </form>
-        
-    </section>
+        </section>
 
-    <section class="result__container">
-        <div class="result__item">
-            <p class="result__message">Here you go!</p>
-            <h2 class="result__title">Name of cocktail</h2>
-            <img class="result__img" src="" alt="" >
-        </div>
-    </section>
+        <section class="result__container">
+            <div class="result__item">
+                <p class="result__message">Here you go!</p>
+                <h2 class="result__title">Name of cocktail</h2>
+                <img class="result__img" src="" alt="">
+            </div>
+        </section>
 
-    <section class="recipe__container">
-        <article class="result__item">
-            <h2 class="recipe__title">Recipe:</h2>
-            <div>
-                <h4>Ingredients:</h4>
-                <ul class="recipe__ingredients"></ul>
-            </div>
-            <div>
-                <h4>Measurements:</h4>
-                <ul class="recipe__measurements"></ul>
-            </div>
-            <div>
-                <h4>Instructions:</h4>
-                <p class="recipe__instructions"></p>
-            </div>
-        </article>
+        <section class="recipe__container">
+            <article class="result__item">
+                <h2 class="recipe__title">Recipe:</h2>
+                <div class="recipe__display">
+                    <div class="recipe__display-ingredients">
+                        <h4>Ingredients:</h4>
+                        <ul class="recipe__ingredients"></ul>
+                    </div>
+                    <div class="recipe__display-measurements">
+                        <h4>Measurements:</h4>
+                        <ul class="recipe__measurements"></ul>
+                    </div>
+                </div>
+                <div class="recipe__instructions">
+                    <h4 class="recipe__instructions-title">Instructions:</h4>
+                    <p class="recipe__instructions-text"></p>
+                </div>
+            </article>
+        </section>
     </section>
 
     <footer class="footer">

@@ -1,0 +1,155 @@
+@use './partials/fonts' as *;
+@use './partials/colors' as color;
+@use './partials/breakpoints' as breakpoint;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'inter';
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/*mobile*/
+.header {
+  background-color: color.$background-dark;
+  text-align: center;
+  color: color.$text-light;
+  padding: 1.5rem;
+
+  &__title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.375rem;
+  }
+}
+
+.main-content {
+  background-color: color.$background-light;
+  color: color.$text-dark;
+  padding: 1.5rem;
+}
+
+.selection {
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+  &__form {
+    background-color: color.$background-mid;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+  }
+
+  &__title {
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+  }
+
+  &__btn {
+    background-color: color.$btn-default;
+    border: 1px solid color.$btn-border;
+    padding: 0.25rem;
+    line-height: 1.25rem;
+    width: 100%;
+    border-radius: 0.25rem;
+    font: size 10px;
+    font-weight: 700;
+  }
+  &__item {
+    text-align: center;
+    padding: 0.25rem;
+    background-color: color.$background-light;
+  }
+}
+
+.result {
+  &__container {
+    // background-color: color.$background-light;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__message {
+    margin: 0;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+  }
+  &__title {
+    color: color.$text-dark;
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+  }
+
+  &__img {
+    width: auto;
+    height: 50vh;
+  }
+}
+
+.recipe {
+  &__container {
+    // background-color: color.$background-light;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__ingredients {
+    list-style: disc;
+
+    &-item {
+      text-align: left;
+    }
+  }
+  &__measurements {
+    list-style: disc;
+
+    &-item {
+      text-align: left;
+    }
+  }
+
+  &__display {
+    display: flex;
+    justify-content: space-between;
+
+    &-ingredients {
+      width: 45%;
+      background-color: color.$background-mid;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+    }
+    &-measurements {
+      width: 45%;
+      background-color: color.$background-mid;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+    }
+  }
+  &__instructions {
+    padding: 1rem;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+  }
+}

@@ -74,7 +74,8 @@ const renderCocktail = (cocktailObj) => {
 formEl.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    cocktailObj = {};
+    clearObj();
+    clearDOM();
     
     console.log(e.target.Alcohol.value);
     let ingredientFilter = e.target.Alcohol.value;
@@ -82,6 +83,21 @@ formEl.addEventListener('submit', (e) => {
     promiseCall(ingredientFilter);
   
 })
+
+function clearObj() {
+    console.log('clearObj Ran');
+    cocktailObj.ingredients.splice(0, cocktailObj.ingredients.length);
+    cocktailObj.measurements.splice(0, cocktailObj.measurements.length);
+    console.log(cocktailObj.ingredients, cocktailObj.measurements);
+}
+
+function clearDOM() {
+    const ingredientsUlEl = document.querySelector('.recipe__ingredients');
+    const measurementsUlEl = document.querySelector('.recipe__measurements');
+
+    ingredientsUlEl.innerText = '';
+    measurementsUlEl.innerText = '';
+}
 
 
 
@@ -102,7 +118,7 @@ const ingredientsPromiseCall = (drinkId) => {
     const ingredientsPromise = axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`);
     console.log(ingredientsPromise);
     ingredientsPromise.then((response) => {
-        // console.log(response.data.drinks[0].strInstructions);
+        console.log(response.data.drinks[0]);
     
         let cocktail = response.data.drinks[0];
         const ingredientsUlEl = document.querySelector('.recipe__ingredients');
@@ -118,6 +134,12 @@ const ingredientsPromiseCall = (drinkId) => {
         cocktailObj.ingredients.push(cocktail.strIngredient3);
         cocktailObj.ingredients.push(cocktail.strIngredient4);
     
+        // if strIngredient
+
+        // for loop, string ingredient 1 - 15
+        // if value is null, return
+
+
         // Measurements
         cocktailObj.measurements.push(cocktail.strMeasure1);
         cocktailObj.measurements.push(cocktail.strMeasure2);

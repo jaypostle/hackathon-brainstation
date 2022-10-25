@@ -116,7 +116,7 @@ const ingredientsPromiseCall = drinkId => {
       const ingredient = document.createElement('li');
       ingredient.classList.add('recipe__ingredient-item');
       ingredient.innerText = item;
-      ingredientsUlEl.innerHTML = '';
+
       ingredientsUlEl.appendChild(ingredient);
     });
 

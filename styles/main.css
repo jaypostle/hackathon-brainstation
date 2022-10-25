@@ -66,6 +66,7 @@ body {
   background-color: #cdbaac;
   color: rgb(26, 15, 25);
   padding: 1.5rem;
+  min-height: 80vh;
 }
 
 .selection__container {
@@ -159,4 +160,17 @@ body {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
+}
+
+footer.footer {
+  background-color: #373943;
+  color: #fafafa;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer.footer p {
+  margin: 0px;
 }/*# sourceMappingURL=main.css.map */

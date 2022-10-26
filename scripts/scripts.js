@@ -127,7 +127,8 @@ const ingredientsPromiseCall = (drinkId) => {
         const instructionsEl = document.querySelector('.recipe__instructions');
     
         cocktailObj.instructions = cocktail.strInstructions;
-    
+        
+        console.log(cocktail);
 
         let filteredIngredients = Object.keys(cocktail).filter((name) => /strIngredient/.test(name));
         // console.log(filteredNames);
